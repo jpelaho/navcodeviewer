@@ -1,0 +1,11 @@
+﻿      IF TempRevertTransactionNo.FINDSET THEN;
+      REPEAT NEXT
+        IF ReversalEntry2."Reversal Type" = ReversalEntry2."Reversal Type"::Transaction THEN
+          GLEntry2.SETRANGE("Transaction No.",TempRevertTransactionNo.Number);
+        ReverseGLEntry(
+          GLEntry2,GenJnlLine,TempCustLedgEntry,
+          TempVendLedgEntry,TempBankAccLedgEntry,NextDtldCustLedgEntryEntryNo,NextDtldVendLedgEntryEntryNo,
+          FAInsertLedgEntry);
+      UNTIL 'ree' TempRevertTransactionNo.NEXT = 0;
+
+      

@@ -1,0 +1,261 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{8383409C-6C1F-420A-A0C9-229AA5D42835}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>NavCodeViewer</RootNamespace>
+    <AssemblyName>NavCodeViewer</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="MdiTabControl">
+      <HintPath>..\DllReferences\MdiTabControl.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WeifenLuo.WinFormsUI.Docking, Version=3.0.6.0, Culture=neutral, PublicKeyToken=5cded1a1a0a7b481, processorArchitecture=MSIL">
+      <HintPath>..\packages\DockPanelSuite.3.0.6\lib\net40\WeifenLuo.WinFormsUI.Docking.dll</HintPath>
+    </Reference>
+    <Reference Include="WeifenLuo.WinFormsUI.Docking.ThemeVS2015, Version=3.0.6.0, Culture=neutral, PublicKeyToken=5cded1a1a0a7b481, processorArchitecture=MSIL">
+      <HintPath>..\packages\DockPanelSuite.ThemeVS2015.3.0.6\lib\net40\WeifenLuo.WinFormsUI.Docking.ThemeVS2015.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Business\CollectElements\CodeunitCollectElements.cs" />
+    <Compile Include="Business\CollectElements\MenusuiteCollectElements.cs" />
+    <Compile Include="Business\CollectElements\NavObjectCollectElements.cs" />
+    <Compile Include="Business\CollectElements\PageCollectElements.cs" />
+    <Compile Include="Business\CollectElements\QueryCollectElements.cs" />
+    <Compile Include="Business\CollectElements\ReportCollectElements.cs" />
+    <Compile Include="Business\CollectElements\TableCollectElements.cs" />
+    <Compile Include="Business\CollectElements\XmlPortCollectElements.cs" />
+    <Compile Include="Business\FormatSource\FormatNavObject.cs" />
+    <Compile Include="Business\IProgressBar.cs" />
+    <Compile Include="Business\NavObject.cs" />
+    <Compile Include="Business\Project.cs" />
+    <Compile Include="Business\ReferencesMgt\CodeRefMgt.cs" />
+    <Compile Include="Business\ReferencesMgt\FlowFieldRefMgt.cs" />
+    <Compile Include="Business\ReferencesMgt\NavObjectCollectRefs.cs" />
+    <Compile Include="Business\ReferencesMgt\OthersRefMgt.cs" />
+    <Compile Include="Business\ReferencesMgt\TableRelationRefMgt.cs" />
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Controls\ImageToolStripCombobox.cs" />
+    <Compile Include="Forms\Controls\Interface1.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Forms\Controls\ReferenceHint.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Controls\ReferenceHint.Designer.cs">
+      <DependentUpon>ReferenceHint.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\NavFCTB\NAVSyntaxHighlighter.cs" />
+    <Compile Include="Forms\NavFCTB\NavFCTB.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\NavFCTB\NavFCTB.Designer.cs">
+      <DependentUpon>NavFCTB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Controls\TextProgressBarForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Controls\TextProgressBarForm.Designer.cs">
+      <DependentUpon>TextProgressBarForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ObjectReferences.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ObjectReferences.Designer.cs">
+      <DependentUpon>ObjectReferences.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ObjectStructure.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ObjectStructure.Designer.cs">
+      <DependentUpon>ObjectStructure.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ObjectViewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ObjectViewer.Designer.cs">
+      <DependentUpon>ObjectViewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Search\FindErrorMessage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Search\FindErrorMessage.Designer.cs">
+      <DependentUpon>FindErrorMessage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Search\SearchOptions.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Search\SearchOptions.Designer.cs">
+      <DependentUpon>SearchOptions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\SourceViewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\SourceViewer.Designer.cs">
+      <DependentUpon>SourceViewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Global\GlobalUI.cs" />
+    <Compile Include="Global\GlobalApp.cs" />
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Utils\CodeRange.cs" />
+    <Compile Include="Business\FormatSource\FormatMenusuite.cs" />
+    <Compile Include="Global\Extensions.cs" />
+    <Compile Include="Business\ImportFileMgt.cs" />
+    <Compile Include="Business\FormatSource\FormatCodeunit.cs" />
+    <Compile Include="Business\FormatSource\FormatQuery.cs" />
+    <Compile Include="Utils\Reference.cs" />
+    <Compile Include="Utils\RefMgt.cs" />
+    <Compile Include="Utils\Trigger.cs" />
+    <Compile Include="Utils\Variable.cs" />
+    <Compile Include="Business\FormatSource\FormatXmlPort.cs" />
+    <Compile Include="Business\FormatSource\FormatReport.cs" />
+    <Compile Include="Business\FormatSource\FormatPage.cs" />
+    <Compile Include="Business\FormatSource\FormatTable.cs" />
+    <Compile Include="Domain\Enums.cs" />
+    <Compile Include="Domain\ErrorMessageRef.cs" />
+    <Compile Include="Domain\FieldReference.cs" />
+    <Compile Include="Domain\ObjetReference.cs" />
+    <Compile Include="Domain\FunctionReference.cs" />
+    <Compile Include="Domain\Function.cs" />
+    <Compile Include="Domain\Field.cs" />
+    <Compile Include="Domain\ObjectType.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Controls\ReferenceHint.resx">
+      <DependentUpon>ReferenceHint.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\NavFCTB\NavFCTB.resx">
+      <DependentUpon>NavFCTB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ObjectReferences.resx">
+      <DependentUpon>ObjectReferences.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ObjectStructure.resx">
+      <DependentUpon>ObjectStructure.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ObjectViewer.resx">
+      <DependentUpon>ObjectViewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Search\FindErrorMessage.resx">
+      <DependentUpon>FindErrorMessage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Search\SearchOptions.resx">
+      <DependentUpon>SearchOptions.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\SourceViewer.resx">
+      <DependentUpon>SourceViewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Docs\Filtre pour test.txt" />
+    <Content Include="Docs\Planning.txt" />
+    <Content Include="Docs\Todo.txt" />
+    <Content Include="Docs\tools.txt" />
+    <None Include="Resources\group.png" />
+    <None Include="Resources\menusuite.png" />
+    <None Include="Resources\page.png" />
+    <None Include="Resources\query.png" />
+    <None Include="Resources\report.png" />
+    <None Include="Resources\table.png" />
+    <None Include="Resources\xmlport.png" />
+    <None Include="Resources\objectFiltered.png" />
+    <None Include="Resources\objectInserted.png" />
+    <None Include="Resources\objectUpdated.png" />
+    <None Include="Resources\objectUsed.png" />
+    <None Include="Resources\Refe.png" />
+    <None Include="Resources\field.png" />
+    <None Include="Resources\function.png" />
+    <None Include="Resources\codeunit.png" />
+    <None Include="Resources\objectDeleted.png" />
+    <Content Include="TextFile1.txt" />
+    <Content Include="TextFile2.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\NavViewer\FastColoredTextBox.csproj">
+      <Project>{4398633b-4bf0-45dd-82e9-bb3a2058d21e}</Project>
+      <Name>FastColoredTextBox</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Backup\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

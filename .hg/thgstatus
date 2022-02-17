@@ -1,0 +1,14 @@
+m
+m.vs/NavCodeViewer/v16
+r.vs/NavCodeViewer/v16/TestStore/0
+mConsoleApp1
+mNavCodeViewer
+rNavCodeViewer/Business
+rNavCodeViewer/Business/ReferencesMgt
+mNavCodeViewer/Docs
+rNavCodeViewer/Domain
+mNavCodeViewer/Properties
+mNavCodeViewer/Utils
+rNavViewer
+mNavViewerTests
+mNavViewerTests/Business

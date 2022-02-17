@@ -1,0 +1,3 @@
+﻿- Gerer les blocs WITH
+- Gerer les fonctions de sous formulaire appeleés
+colorer recordid
